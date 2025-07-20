@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "name": "Futuristic Cat",
+    "image_url": "/images/futuristic-cat.png",
+    "description": "A hoodie with a futuristic cat in space design."
+  },
+  {
+    "id": "2",
+    "name": "Cyberpunk Neon",
+    "image_url": "/images/cyberpunk-neon.png",
+    "description": "Cyberpunk style hoodie with neon colors."
+  }
+]

@@ -3,17 +3,18 @@ import uuid
 from fastapi import APIRouter
 from fastapi.responses import FileResponse
 from PIL import Image
+import json
 
 router = APIRouter()
+
+with open("generated_hoodies/hoodies.json", "r") as f:
+    hoodies_db = json.load(f)
 
 HOODIE_FOLDER = "generated_hoodies"
 
 @router.get("/hoodies")
 async def list_hoodies():
-    # List all image filenames in hoodie folder
-    files = os.listdir(HOODIE_FOLDER)
-    images = [f"/hoodies/image/{file}" for file in files if file.endswith(('.png', '.jpg', '.jpeg'))]
-    return {"hoodies": images}
+    return hoodies_db
 
 @router.get("/hoodies/image/{image_name}")
 async def get_hoodie_image(image_name: str):
